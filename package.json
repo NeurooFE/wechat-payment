@@ -1,0 +1,9 @@
+{
+  "name": "@neuroo_fe/wechat-payment",
+  "version": "1.0.0",
+  "description": "wechat payment middleware",
+  "main": "index.js",
+  "repository": "git@github.com:NeurooFE/wechat-payment.git",
+  "author": "neuroo",
+  "license": "MIT"
+}
