@@ -15,7 +15,7 @@
     <% } %>
     <% if (!mode) { %>
       var success = function () {
-        location.href = redirect
+        location.href = <%= redirect %>
       }
     <% } %>
     wx.config(<%- JSON.stringify(jsConfig) %>)
