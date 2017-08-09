@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  <script>
+    <% if (mode === 'iframe') { %>
+      var success = function () {
+        parent.postMessage({
+          type: 'success'
+        }, '*')
+      }
+    <% } %>
+    <% if (!mode) { %>
+      var success = function () {
+        location.href = redirect
+      }
+    <% } %>
+    wx.config(<%- JSON.stringify(jsConfig) %>)
+    wx.ready(function() {
+      var payConfig = <%- JSON.stringify(payConfig) %>
+      payConfig.success = success
+      payConfig.error = function(err) {
+        alert(err.message)
+      }
+      wx.chooseWXPay(payConfig)
+    })
+  </script>
+  <title><%= title %></title>
+</head>
+<body>
+  
+</body>
+</html>
