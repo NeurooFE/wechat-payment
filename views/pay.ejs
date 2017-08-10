@@ -6,22 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script>
-    <% if (mode === 'iframe') { %>
-      var success = function () {
-        parent.postMessage({
-          type: 'success'
-        }, '*')
-      }
-    <% } %>
-    <% if (!mode) { %>
-      var success = function () {
-        location.href = '<%= redirect %>'
-      }
-    <% } %>
     wx.config(<%- JSON.stringify(jsConfig) %>)
     wx.ready(function() {
       var payConfig = <%- JSON.stringify(payConfig) %>
-      payConfig.success = success
+      payConfig.success = function () {
+        location.href = '<%= redirect %>'
+      }
       payConfig.error = function(err) {
         alert(err.message)
       }
