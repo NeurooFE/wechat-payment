@@ -10,7 +10,7 @@
     wx.ready(function() {
       var payConfig = <%- JSON.stringify(payConfig) %>
       payConfig.success = function () {
-        location.href = '<%= redirect %>'
+        location.href = '<%- redirect %>'
       }
       payConfig.error = function(err) {
         alert(err.message)
