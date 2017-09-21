@@ -4,6 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/NeurooFE/wechat-payment.svg)](https://github.com/NeurooFE/wechat-payment/network)
 [![GitHub stars](https://img.shields.io/github/stars/NeurooFE/wechat-payment.svg)](https://github.com/NeurooFE/wechat-payment/stargazers)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/NeurooFE/wechat-payment.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
+[![NPM](https://nodei.co/npm/vue-lazy-render.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-lazy-render/)
 
 ## 描述
 

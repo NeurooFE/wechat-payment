@@ -6,17 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
   <script>
-    wx.config(<%- JSON.stringify(jsConfig) %>)
-    wx.ready(function() {
-      var payConfig = <%- JSON.stringify(payConfig) %>
-      payConfig.success = function () {
-        location.href = '<%- redirect %>'
-      }
-      payConfig.error = function(err) {
-        alert(err.message)
-      }
-      wx.chooseWXPay(payConfig)
-    })
+    window.onload = function () {
+      wx.config(<%- JSON.stringify(jsConfig) %>)
+      wx.ready(function() {
+        var payConfig = <%- JSON.stringify(payConfig) %>
+        payConfig.success = function () {
+          location.href = '<%- redirect %>'
+        }
+        payConfig.error = function(err) {
+          alert(err.message)
+        }
+        wx.chooseWXPay(payConfig)
+      })
+    }
   </script>
   <title><%= title %></title>
 </head>
